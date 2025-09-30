@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Word题库随机出题系统</title>
     <link rel="stylesheet" href="style.css">
+        <!-- 引入mammoth.js用于前端解析docx -->
+        <script src="https://cdn.jsdelivr.net/npm/mammoth@1.7.0/mammoth.browser.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -25,4 +27,7 @@
     <script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
     <script src="main.js"></script>
 </body>
-</html>
+    <h2>上传题库（Word文档）</h2>
+    <input type="file" id="docx-upload" accept=".docx">
+    <button id="parse-btn">解析题库</button>
+    <div id="result" style="margin-top:20px;"></div>

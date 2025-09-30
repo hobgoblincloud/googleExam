@@ -92,6 +92,33 @@ $(function() {
         $('#resultArea').empty();
     });
 
+            // 引入mammoth.js解析docx（需在index.html中引入mammoth.js或用CDN）
+            document.getElementById('parse-btn').addEventListener('click', function() {
+                const fileInput = document.getElementById('docx-upload');
+                const resultDiv = document.getElementById('result');
+                if (!fileInput.files || fileInput.files.length === 0) {
+                    resultDiv.innerHTML = '<span style="color:red">请先选择Word文档</span>';
+                    return;
+                }
+                const file = fileInput.files[0];
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const arrayBuffer = event.target.result;
+                    // 这里调用mammoth解析
+                    if (window.mammoth) {
+                        mammoth.convertToHtml({arrayBuffer: arrayBuffer})
+                            .then(function(resultObject) {
+                                resultDiv.innerHTML = resultObject.value;
+                            })
+                            .catch(function(err) {
+                                resultDiv.innerHTML = '<span style="color:red">解析失败: ' + err.message + '</span>';
+                            });
+                    } else {
+                        resultDiv.innerHTML = '<span style="color:red">未加载mammoth.js库</span>';
+                    }
+                };
+                reader.readAsArrayBuffer(file);
+            });
     $('#questionArea').on('submit', 'form', function(e) {
         e.preventDefault();
         let correct = 0;
