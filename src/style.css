@@ -1,0 +1,63 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 32px 24px 24px 24px;
+}
+h1 {
+    text-align: center;
+    color: #2d6cdf;
+}
+.upload-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+#questionArea {
+    margin-bottom: 20px;
+}
+.question-block {
+    background: #f0f4fa;
+    border-radius: 6px;
+    padding: 18px 16px;
+    margin-bottom: 18px;
+}
+.options label {
+    display: block;
+    margin: 6px 0;
+    cursor: pointer;
+}
+#resultArea {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #2d6cdf;
+}
+button {
+    background: #2d6cdf;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+button:disabled {
+    background: #b0c4e7;
+    cursor: not-allowed;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word题库随机出题系统</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Word题库随机出题系统</h1>
+        <div class="upload-section">
+            <input type="file" id="wordFile" accept=".doc,.docx">
+            <button id="uploadBtn">上传题库</button>
+            <span id="uploadStatus"></span>
+        </div>
+        <div class="actions">
+            <button id="randomBtn" disabled>出题</button>
+            <span id="remaining"></span>
+        </div>
+        <div id="questionArea"></div>
+        <div id="resultArea"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
